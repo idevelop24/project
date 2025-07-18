@@ -1,0 +1,225 @@
+body {
+	background-color: white; /* Set background to white */
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	background-color: #333; /* dark gray */
+	color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-left .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9; /* light gray */
+	min-width: 120px;
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd; /* gray on hover */
+}
+
+.search-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.search-container input[type="submit"],
+.search-container select,
+.search-container button {
+	margin: 0 10px;
+}
+
+table {
+	width: calc(100% - 40px); /* Set table width to 100% minus 40px margin */
+	border-collapse: collapse;
+	margin: 0 auto; /* Center the table */
+	margin-top: 20px;
+	margin-bottom: 20px; /* Add margin from top and bottom */
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd; /* light gray border */
+}
+
+th {
+	background-color: #333; /* dark gray */
+	color: white;
+}
+th.sort_link {
+	cursor: pointer;
+}
+
+th.sorted {
+	color: #ff0000; /* Red color for sorted column */
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2; /* alternate row background */
+}
+
+footer {
+	background-color: #007bff; /* blue */
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+/* Nested Checkbox selectbox */
+ .nested-select {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+        }
+
+        .nested-select-button {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .nested-select-box {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        .nested-select-box div {
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .nested-select-box div:hover {
+            background-color: #f1f1f1;
+        }
+
+        .nested-select-box input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .show {
+            display: block;
+        }
+		
+		
+/* MODAL START *****  */
+.open-modal-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #999;
+}
+
+.modal-body {
+  padding: 10px 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.save-btn, .close-footer-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.close-footer-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* MODAL End *****  */

@@ -1,0 +1,105 @@
+<?php
+
+namespace Framework\Core;
+class AdminBaseController extends Controller
+{
+    protected $document;
+    public function __construct(Registry $registry)
+    {
+        parent::__construct($registry);
+        $this->document = $this->registry->get("document");
+    }
+	
+    public function loadModel($path){
+        $model =  strtolower($path).".php";
+		if(file_exists(MAGNET_DIR."/".ADMIN_DIR."/model/".$model)){
+            include_once (MAGNET_DIR."/".ADMIN_DIR."/model/".$model);
+            $class = explode("/",$path);
+            $class_name = ucfirst($class[1]);
+            $key = str_replace("/","_",$path);
+            $model_key = "model_".$key;
+            if(class_exists($class_name)){
+                $my_class = new $class_name($this->registry);
+                $this->$model_key = $my_class;
+            }else{
+                throw new \Exception("Class '$class_name' does not exist.");
+            }
+        }else{
+            throw new \Exception("Model '$model' does not exist.");
+        }
+    }
+
+    public function loadController($path){
+        $controller =  strtolower($path).".php";
+        if(file_exists(MAGNET_DIR."/".ADMIN_DIR."/controller/".$controller)){
+            include_once (MAGNET_DIR."/".ADMIN_DIR."/controller/".$controller);
+            $class = explode("/",$path);
+            $class_name = ucfirst($class[1])."Controller";
+            $key = str_replace("/","_",$path);
+            $controller_key = "controller_".$key;
+            if(class_exists($class_name)){
+                $my_class = new $class_name($this->registry);
+				
+                $this->$controller_key = $my_class;
+				
+            }else{
+                throw new \Exception("Class '$class_name' does not exist.");
+            }
+        }else{
+            throw new \Exception("Controller '$controller' does not exist.");
+        }
+
+    }
+
+	
+    public function render(string $template, array $data = [], string $display = "index"){
+		$this->smarty->assign('data', $data);
+        $this->smarty->assign('middle_content', $template.".html");
+		
+		if ($display == "index"){
+			$this->loadController("inc/header");
+			$this->loadController("inc/navbar");
+			$this->loadController("inc/footer");
+			$this->smarty->assign('header', $this->controller_inc_header->index());
+			$this->smarty->assign('navbar', $this->controller_inc_navbar->index());
+			$this->smarty->assign('footer', $this->controller_inc_footer->index());
+		}
+        $this->smarty->display($display.".html");
+    }
+
+    public function renderJson($template,$data){
+        $this->smarty->assign('data', $data);
+        $result = $this->smarty->fetch($template.".html");
+        echo $result;
+    }
+	
+	public function redirect(string $url): void {
+		header('Location: '.HTTP_SERVER.ADMIN_DIR.'/' . str_replace(['&amp;', "\n", "\r"], ['&', '', ''], $url));
+		exit();
+	}
+	public function reload(int $delay = 0) {
+		if($delay > 0)
+		echo "<script> setTimeout(() => {
+			  location.reload();
+			}, ".($delay*1000).");</script>";
+		else
+			echo "<script> location.reload();</script>";	
+	}
+
+    function link($route, $token) {
+        if (str_contains($route, '?'))
+        $final_url = HTTP_SERVER.ADMIN_DIR ."/" . $route ."&token=" . $token ."/";
+        else
+        $final_url = HTTP_SERVER.ADMIN_DIR ."/" . $route ."?token=" . $token ."/";
+            return $final_url;
+    }
+
+    public function __get($propertyName) {
+        if (property_exists($this, $propertyName)) {
+            return $this->$propertyName;
+        } else {
+            throw new \Exception("Property '$propertyName' does not exist.");
+        }
+    }
+
+}

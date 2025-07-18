@@ -1,0 +1,1019 @@
+Array
+(
+    [admin_groups] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => group_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => name
+                            [type] => varchar(64)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => permissions
+                            [type] => text
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => description
+                            [type] => text
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => date_added
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [5] => Array
+                        (
+                            [name] => date_modified
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => group_id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => group_id
+                        )
+
+                )
+
+        )
+
+    [admin_logs] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => log_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => admin_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => action
+                            [type] => varchar(128)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => data
+                            [type] => text
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => ip
+                            [type] => varchar(40)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [5] => Array
+                        (
+                            [name] => user_agent
+                            [type] => text
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [6] => Array
+                        (
+                            [name] => date_added
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => log_id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => log_id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => admin_id
+                            [column_name] => admin_id
+                        )
+
+                )
+
+        )
+
+    [admin_sessions] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => session_id
+                            [type] => varchar(32)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => admin_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => token
+                            [type] => varchar(255)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => ip
+                            [type] => varchar(40)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => user_agent
+                            [type] => text
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [5] => Array
+                        (
+                            [name] => expires
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [6] => Array
+                        (
+                            [name] => date_added
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => session_id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => session_id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => admin_id
+                            [column_name] => admin_id
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => token
+                            [column_name] => token
+                        )
+
+                )
+
+        )
+
+    [admin_to_group] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => admin_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => group_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => admin_id
+                    [1] => group_id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => admin_id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => group_id
+                        )
+
+                )
+
+        )
+
+    [admins] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => admin_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => username
+                            [type] => varchar(64)
+                            [null] => NO
+                            [key] => UNI
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => password
+                            [type] => varchar(255)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => firstname
+                            [type] => varchar(32)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => lastname
+                            [type] => varchar(32)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [5] => Array
+                        (
+                            [name] => email
+                            [type] => varchar(96)
+                            [null] => NO
+                            [key] => UNI
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [6] => Array
+                        (
+                            [name] => telephone
+                            [type] => varchar(32)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [7] => Array
+                        (
+                            [name] => status
+                            [type] => tinyint(1)
+                            [null] => NO
+                            [key] => 
+                            [default] => 0
+                            [extra] => 
+                        )
+
+                    [8] => Array
+                        (
+                            [name] => verified
+                            [type] => tinyint(1)
+                            [null] => NO
+                            [key] => 
+                            [default] => 0
+                            [extra] => 
+                        )
+
+                    [9] => Array
+                        (
+                            [name] => token
+                            [type] => varchar(255)
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [10] => Array
+                        (
+                            [name] => last_login
+                            [type] => datetime
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [11] => Array
+                        (
+                            [name] => last_activity
+                            [type] => datetime
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [12] => Array
+                        (
+                            [name] => ip
+                            [type] => varchar(40)
+                            [null] => YES
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [13] => Array
+                        (
+                            [name] => date_added
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [14] => Array
+                        (
+                            [name] => date_modified
+                            [type] => datetime
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => admin_id
+                )
+
+            [foreign_keys] => Array
+                (
+                    [0] => Array
+                        (
+                            [column_name] => username
+                            [constraint_name] => username
+                            [referenced_table_name] => 
+                            [referenced_column_name] => 
+                        )
+
+                    [1] => Array
+                        (
+                            [column_name] => email
+                            [constraint_name] => email
+                            [referenced_table_name] => 
+                            [referenced_column_name] => 
+                        )
+
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => admin_id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => username
+                            [column_name] => username
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => email
+                            [column_name] => email
+                        )
+
+                )
+
+        )
+
+    [tbl_posts] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => title
+                            [type] => varchar(100)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => content
+                            [type] => text
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => image
+                            [type] => varchar(250)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => posts_categories_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [5] => Array
+                        (
+                            [name] => created_at
+                            [type] => timestamp
+                            [null] => NO
+                            [key] => 
+                            [default] => current_timestamp()
+                            [extra] => 
+                        )
+
+                    [6] => Array
+                        (
+                            [name] => modify_at
+                            [type] => timestamp
+                            [null] => NO
+                            [key] => 
+                            [default] => current_timestamp()
+                            [extra] => 
+                        )
+
+                    [7] => Array
+                        (
+                            [name] => is_archive
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [8] => Array
+                        (
+                            [name] => status
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => id
+                        )
+
+                )
+
+        )
+
+    [tbl_posts_blocks] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => name
+                            [type] => varchar(250)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => sort
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => sort
+                            [column_name] => sort
+                        )
+
+                )
+
+        )
+
+    [tbl_posts_categories] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => ID
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => parent
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 1
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => name
+                            [type] => text
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [3] => Array
+                        (
+                            [name] => sort
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [4] => Array
+                        (
+                            [name] => status
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => ID
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => ID
+                        )
+
+                )
+
+        )
+
+    [tbl_posts_status] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => name
+                            [type] => varchar(250)
+                            [null] => NO
+                            [key] => 
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => sort
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => sort
+                            [column_name] => sort
+                        )
+
+                )
+
+        )
+
+    [tbl_posts_to_blocks] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => posts_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => post_blocks_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => sort
+                            [column_name] => post_blocks_id
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => post
+                            [column_name] => posts_id
+                        )
+
+                )
+
+        )
+
+    [tbl_posts_to_categories] => Array
+        (
+            [fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => PRI
+                            [default] => 
+                            [extra] => auto_increment
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => posts_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => posts_categories_id
+                            [type] => int(11)
+                            [null] => NO
+                            [key] => MUL
+                            [default] => 
+                            [extra] => 
+                        )
+
+                )
+
+            [primary_keys] => Array
+                (
+                    [0] => id
+                )
+
+            [foreign_keys] => Array
+                (
+                )
+
+            [indexes] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => PRIMARY
+                            [column_name] => id
+                        )
+
+                    [1] => Array
+                        (
+                            [name] => sort
+                            [column_name] => posts_categories_id
+                        )
+
+                    [2] => Array
+                        (
+                            [name] => post
+                            [column_name] => posts_id
+                        )
+
+                )
+
+        )
+
+)

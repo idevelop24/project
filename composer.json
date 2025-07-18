@@ -1,0 +1,25 @@
+{
+    "name": "vanilla/magnet",
+    "description": "Light Modern (MVC) Shopping Cart Cms",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Hamed",
+            "email": "hamed.developer.64@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "framework/storage/vendor/"
+    },
+	"autoload": {
+        "psr-4": {
+            "Framework\\Core\\": "framework/core/",
+            "Framework\\Library\\": "framework/library/"
+        }
+    },
+	"require": {
+		"php": "^8.1",
+		"ext-gd": "*",
+		"chillerlan/php-qrcode": "^5.0"
+	}
+}
