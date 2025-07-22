@@ -2,7 +2,9 @@
 class ControllerBlogPosts extends \Framework\Core\AdminBaseController {
     
     public function index() {
-        $this->grid();
+        $this->load->model('blog/posts');
+        $data['posts'] = $this->model_blog_posts->getPosts();
+        $this->response->setOutput($this->load->view('blog/posts/view/index', $data));
     }
 
     public function grid() {

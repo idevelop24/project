@@ -1,5 +1,5 @@
 <?php
-class ControllerLogin extends \Framework\Core\Controller {
+class ControllerLogin extends \Framework\Core\AdminBaseController {
     public function index() {
         $this->response->setOutput($this->load->view('login/view/login'));
 	}
@@ -7,10 +7,10 @@ class ControllerLogin extends \Framework\Core\Controller {
     public function submit() {
         $this->load->library('Admin');
         if ($this->admin->login($this->request->post['username'], $this->request->post['password'])) {
-            $this->response->redirect($this->url->link('home/dashboard'));
+            $this->response->redirect($this->url->link('home/dashboard', '', true));
         } else {
             $this->session->data['error'] = 'Invalid login credentials.';
-            $this->response->redirect($this->url->link('login'));
+            $this->response->redirect($this->url->link('login', '', true));
         }
     }
 

@@ -154,8 +154,8 @@ class AdminBaseController extends Controller
      */
     protected function verifyAdminAccess(): void 
     {
-        if (!$this->admin->isLogged()) {
-            $this->redirect('login');
+        if (!$this->admin->is_logged_in()) {
+            $this->response->redirect($this->url->link('login', '', true));
         }
         
         // Verify CSRF token for POST requests

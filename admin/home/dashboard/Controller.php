@@ -1,5 +1,5 @@
 <?php
-class ControllerHomeDashboard extends AdminBaseController {
+class ControllerHomeDashboard extends \Framework\Core\AdminBaseController {
     
     public function grid() {
         // Load model
