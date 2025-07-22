@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Skip real files/directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Handle exceptions (cart, search, profile)
+    RewriteRule ^cart/?$ index.php?controller=cart [L,QSA]
+    RewriteRule ^search/?$ index.php?controller=search [L,QSA]
+    RewriteRule ^profile/?$ index.php?controller=profile [L,QSA]
+
+    # Redirect all other URLs to index.php?fake_url=...
+    RewriteRule ^(.*)$ index.php?fake_url=$1 [L,QSA]
+</IfModule>
